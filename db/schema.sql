@@ -5,6 +5,6 @@ USE burgersDB;
 
 CREATE TABLE burgers (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  burgerName VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
   devoured BOOLEAN  
 );

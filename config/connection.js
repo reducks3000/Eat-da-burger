@@ -19,8 +19,7 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   }
-  console.log(
-    "inside connection   mysql connected as id " + connection.threadId
-  );
+  console.log("inside connection   mysql connected as id " + connection.threadId);
 });
+
 module.exports = connection;
