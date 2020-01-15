@@ -1,0 +1,75 @@
+<div class="container bg" alt="Responsive image">
+		<div class="jumbotron">
+		    <div class="row">
+				<div class="left col-sm-3 rounded float-left" alt="Responsive image" alt="Eat-Da-Burger App">			
+				
+                </div>				
+
+				<div class="center col-sm-6 rounded float-left" alt="Responsive image" alt="Eat-Da-Burger App">
+					<center><h1>Eat da burger</h1>					
+				</div>
+
+				<div class="col-sm-3 rounded float-right" alt="Responsive image" alt="Eat-Da-Burger App">
+			    
+                </div>
+
+			</div>
+
+		</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<br>
+			<h2>Burgers Available To Eat!</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <li>
+                        {{this.burgerName}}
+                        <form>
+                        <input type="hidden" name="devoured" value="false">
+                        <button class="btn-primary devourIt" data-id={{this.id}}>Devour It!</button>
+                        </form> 
+                    </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+	    </div>
+
+	    <div class="right col-sm-6">
+			<br>
+			<h2>Burgers Devoured!</h2>	
+			  <ul>		
+			  {{#each burgers}}
+			    {{#if this.devoured}}
+			      <li>
+			        {{this.burgerName}}
+					<button class="btn-primary deleteIt" style="background-color:red;color:black;" data-id={{this.id}}>Delete It!</button>
+			      </li>
+			    {{/if}}
+			  {{/each}}
+			  </ul>
+			
+	    </div>
+  	</div>
+	<div class="row">
+		
+	    <div class="center col-sm-12">
+
+			<h2>Add A Burger!</h2>
+
+			<form id="createForm">
+		
+
+			  <div class="form-group">
+			    <p>Enter burger to order and click the Submit Order button.</p>
+			    <input type="text" id="create" name="burgerName">
+			  </div>
+			  
+			  <button class="btn-primary" id="createButton" type="submit">Submit Order</button>
+			</form>
+
+	    </div>
+	
+  	</div>
+</div>

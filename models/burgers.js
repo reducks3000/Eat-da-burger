@@ -1,6 +1,5 @@
-// Import the ORM to interact with the database.
+// Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
-console.log("inside models burgersjs");
 
 var burgers = {
   select: function(cb) {
